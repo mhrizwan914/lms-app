@@ -1,4 +1,5 @@
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemText, Toolbar } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Menu = (props) => {
     const {width, mobile, handle, links} = props;
@@ -13,7 +14,7 @@ const Menu = (props) => {
                             return (
                                 <ListItem key={index}>
                                     <ListItemButton>
-                                        <ListItemText primary={element} />
+                                        <ListItemText primary={<Link to={element.route}>{element.name}</Link>}  />
                                     </ListItemButton>
                                 </ListItem>
                             );
@@ -30,7 +31,7 @@ const Menu = (props) => {
                             return (
                                 <ListItem key={index}>
                                     <ListItemButton>
-                                        <ListItemText primary={element} />
+                                        <ListItemText primary={<Link to={element.route}>{element.name}</Link>}  />
                                     </ListItemButton>
                                 </ListItem>
                             );

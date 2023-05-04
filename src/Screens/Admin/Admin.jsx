@@ -9,7 +9,24 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 function Admin() {
-    const newLinks = ["Institute", "Users", "Theme", "Status"];
+    const routes = [
+        {
+            name: "Institute",
+            route: "institute"
+        },
+        {
+            name: "Users",
+            route: "users"
+        },
+        {
+            name: "Theme",
+            route: "theme"
+        },
+        {
+            name: "Status",
+            route: "status"
+        }
+    ];
 
     const newWidth = 220;
 
@@ -21,7 +38,7 @@ function Admin() {
 
     return (
         <Box component="main">
-            <Drawer width={newWidth} mobile={mobileToggle} handle={handleMobileToggle} links={newLinks} />
+            <Drawer width={newWidth} mobile={mobileToggle} handle={handleMobileToggle} links={routes} />
             <Box component="div" sx={{ width: { sm: `calc(100% - ${newWidth}px)` }, ml: { sm: `${newWidth}px` }}} >
                 <AppBar position="static">
                     <Toolbar>
